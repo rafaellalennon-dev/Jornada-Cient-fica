@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio dos Cientistas - 6º Ano (Ciências)</title>
+    <!-- Importação das fontes do Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Nunito:wght@400;600;800&display=swap" rel="stylesheet">
+    <!-- Arquivo CSS externo -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <!-- Cabeçalho do Jogo -->
+        <header class="game-header">
+            <div class="badge">🔬 6º Ano - Ensino Fundamental</div>
+            <h1>Desafio dos Cientistas 🧪</h1>
+            <p>Testes de Ciências: Terra, Vida e Matéria</p>
+        </header>
+
+        <!-- Tela 1: Boas-vindas / Início -->
+        <section id="screen-welcome" class="card screen active">
+            <h2>Bem-vindo(a), Futuro(a) Cientista!</h2>
+            <p>Você está preparado(a) para testar seus conhecimentos de Ciências do 6º ano?</p>
+            
+            <div class="instructions">
+                <h3>📌 Como Jogar:</h3>
+                <ul>
+                    <li>Responda a <strong>5 perguntas</strong> de múltipla escolha.</li>
+                    <li>Ganhe <strong>20 pontos</strong> a cada resposta correta.</li>
+                    <li>Descubra sua pontuação final e sua medalha no fim!</li>
+                </ul>
+            </div>
+
+            <div class="form-group">
+                <label for="player-name">Digite seu nome ou apelido:</label>
+                <input type="text" id="player-name" placeholder="Ex: Maria Curiosa" maxlength="20">
+            </div>
+
+            <button id="btn-start" class="btn btn-primary">Começar Desafio 🚀</button>
+        </section>
+
+        <!-- Tela 2: Quiz / Pergunta -->
+        <section id="screen-quiz" class="card screen">
+            <!-- Barra de Status (Pontos e Progresso) -->
+            <div class="status-bar">
+                <span id="player-display">Jogador: <strong>-</strong></span>
+                <span id="score-display">Pontos: <strong>0</strong></span>
+            </div>
+
+            <!-- Indicador de Progresso -->
+            <div class="progress-container">
+                <div class="progress-info">
+                    <span id="question-number">Pergunta 1 de 5</span>
+                </div>
+                <div class="progress-bar">
+                    <div id="progress-fill" class="progress-fill"></div>
+                </div>
+            </div>
+
+            <!-- Pergunta do Quiz -->
+            <div class="question-container">
+                <h3 id="question-text">Carregando pergunta...</h3>
+                <div id="options-container" class="options-grid">
+                    <!-- Opções geradas via JS -->
+                </div>
+            </div>
+
+            <!-- Feedback de Resposta -->
+            <div id="feedback-message" class="feedback hidden"></div>
+
+            <button id="btn-next" class="btn btn-secondary hidden">Próxima Pergunta ➔</button>
+        </section>
+
+        <!-- Tela 3: Resultado Final -->
+        <section id="screen-result" class="card screen">
+            <div class="result-icon" id="result-icon">🏆</div>
+            <h2 id="result-title">Parabéns!</h2>
+            <p id="result-player">Excelente trabalho!</p>
+
+            <div class="score-card">
+                <div class="final-score" id="final-score">0 / 100</div>
+                <p id="result-message">Você se saiu muito bem!</p>
+            </div>
+
+            <button id="btn-restart" class="btn btn-primary">Jogar Novamente 🔄</button>
+        </section>
+    </div>
+
+    <!-- Arquivo JavaScript externo -->
+    <script src="script.js"></script>
+</body>
+</html>
